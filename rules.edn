@@ -1,0 +1,16 @@
+[
+ {:ns-name seg.rules,
+ :lhs [{:type seg.rules.Player, :constraints [(= is-active true)]}],
+ :rhs (do (insert! (->Segment 1))),
+ :name "all2?"}
+
+{:ns-name seg.rules,
+ :lhs [{:type seg.rules.Player, :constraints [(= is-staff true)]}],
+ :rhs (do (insert! (->Segment 2))),
+ :name "inhouse2?"}
+
+{:lhs
+ [{:type seg.rules.Segment, :constraints [], :fact-binding :?segment}],
+ :params #{},
+ :name "fetch-segments2"}
+]
